@@ -17,6 +17,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
     
     <!-- Alpine.js for mobile menu and modal -->
+    <script src="https://cdn.jsdelivr.net/npm/@alpinejs/collapse@3.x.x/dist/cdn.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 
     <style>
@@ -145,17 +146,17 @@
             <!-- Logo -->
             <div class="flex-shrink-0">
                 <a href="#inicio" title="Início">
-                    <img src="/imgs/logo.svg" alt="Logo da Clínica Gaia" class="h-20 w-auto" onerror="this.onerror=null;this.src='/imgs/logo.svg';">
+                    <img src="/imgs/logo.svg" alt="Logo da Clínica Gaia" class="h-20 w-auto" onerror="this.onerror=null;this.src='https://placehold.co/150x80/FFFFFF/3C3C3C?text=Clínica+Gaia';">
                 </a>
             </div>
 
             <!-- Desktop Navigation -->
             <nav class="hidden md:flex md:items-center md:space-x-8">
-                <a href="#sobre" class="text-gray-700 hover:text-accent-orange transition-colors">Sobre</a>
-                <a href="#terapias" class="text-gray-700 hover:text-accent-orange transition-colors">Terapias</a>
-                <a href="#galeria" class="text-gray-700 hover:text-accent-orange transition-colors">A Clínica</a>
+                <a href="#inicio" class="text-accent-orange font-semibold">Home</a>
+                <a href="sobre.html" class="text-gray-700 hover:text-accent-orange transition-colors">Sobre</a>
+                <a href="terapias.html" class="text-gray-700 hover:text-accent-orange transition-colors">Terapias</a>
                 <a href="#depoimentos" class="text-gray-700 hover:text-accent-orange transition-colors">Depoimentos</a>
-                <a href="#contato" class="text-gray-700 hover:text-accent-orange transition-colors">Contato</a>
+                <a href="/contato.html"class="text-gray-700 hover:text-accent-orange transition-colors">Contato</a>
             </nav>
 
             <!-- Action Button -->
@@ -179,11 +180,11 @@
         <div x-show="mobileMenuOpen" x-cloak @click.away="mobileMenuOpen = false" x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-transition:leave="transition ease-in duration-150" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0" class="md:hidden absolute top-full w-full">
             <div class="mx-4 mt-2 rounded-lg bg-white/95 p-4 shadow-lg ring-1 ring-black ring-opacity-5 backdrop-blur-md">
                 <nav class="space-y-2">
-                    <a href="#sobre" @click="mobileMenuOpen = false" class="block rounded-md px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-100">Sobre</a>
-                    <a href="#terapias" @click="mobileMenuOpen = false" class="block rounded-md px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-100">Terapias</a>
-                    <a href="#galeria" @click="mobileMenuOpen = false" class="block rounded-md px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-100">A Clínica</a>
+                    <a href="#inicio" @click="mobileMenuOpen = false" class="block rounded-md px-3 py-2 text-base font-medium text-accent-orange bg-gray-100">Home</a>
+                    <a href="sobre.html" @click="mobileMenuOpen = false" class="block rounded-md px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-100">Sobre</a>
+                    <a href="terapias.html" @click="mobileMenuOpen = false" class="block rounded-md px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-100">Terapias</a>
                     <a href="#depoimentos" @click="mobileMenuOpen = false" class="block rounded-md px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-100">Depoimentos</a>
-                    <a href="#contato" @click="mobileMenuOpen = false" class="block rounded-md px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-100">Contato</a>
+                    <a href="/contato.htm" @click="mobileMenuOpen = false" class="block rounded-md px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-100">Contato</a>
                     <a href="https://api.whatsapp.com/send/?phone=554899071442&text=Ol%C3%A1%21+Tenho+interesse+em+agendar+uma+consulta+&type=phone_number&app_absent=0" target="_blank" @click="mobileMenuOpen = false" class="mt-4 block w-full text-center rounded-lg bg-accent-orange px-4 py-2 text-base font-medium text-white shadow-md hover:bg-accent-orange-dark transition-all">
                         Agendar Consulta
                     </a>
@@ -219,66 +220,52 @@
             </div>
         </section>
 
-        <!-- Section 2: Sobre Ilze Petri (UPDATED) -->
+        <!-- Section 2: Sobre Ilze Petri (Condensed) -->
         <section id="sobre" class="py-20 md:py-32">
             <div class="container mx-auto px-6">
                 <div class="grid md:grid-cols-2 gap-12 lg:gap-20 items-center">
-                    <div class="max-w-sm mx-auto md:max-w-full fade-in" x-intersect.once="el.classList.add('visible'); el.style.transitionDelay = '200ms'">
-                        <img src="/imgs/ilze.png" alt="Retrato de Ilze Petri" class="rounded-lg shadow-2xl object-cover w-full h-full" onerror="this.onerror=null;this.src='/imgs/ilze.png';">
+                    <div class="max-w-sm mx-auto md:max-w-full fade-in">
+                        <img src="/imgs/ilze.png" alt="Retrato de Ilze Petri" class="rounded-lg shadow-2xl object-cover w-full h-full" onerror="this.onerror=null;this.src='https://placehold.co/600x750/FDFCF9/3C3C3C?text=Ilze+Petri';">
                     </div>
-                    <div class="fade-in" x-intersect.once="el.classList.add('visible'); el.style.transitionDelay = '400ms'">
-                        <img src="imgs/ilzelogo.svg" alt="Logo de Ilze Petri" class="h-20 w-auto mb-6 opacity-80" onerror="this.onerror=null;this.src='imgs/ilzelogo.svg';">
-                        <h2 class="text-4xl md:text-5xl font-serif text-primary-green mb-6">Minha Jornada com as Práticas Integrativas</h2>
+                    <div class="fade-in">
+                        <img src="imgs/ilzelogo.svg" alt="Logo de Ilze Petri" class="h-20 w-auto mb-6 opacity-80" onerror="this.onerror=null;this.src='https://placehold.co/200x80/FDFCF9/3C3C3C?text=Ilze+Petri';">
+                        <h2 class="text-4xl md:text-5xl font-serif text-primary-green mb-6">A Alma da Clínica Gaia</h2>
                         <div class="space-y-4 text-gray-700 leading-relaxed">
-                            <p>Olá, eu sou Ilze Petris, uma apaixonada pela capacidade de autocura do ser humano. Minha jornada na naturologia começou com um desejo profundo de ajudar as pessoas e entender a saúde além da ausência de doença, buscando a raiz dos desequilíbrios para promover uma vitalidade genuína. A pós-graduação em Acupuntura veio para aprimorar ainda mais meus conhecimentos e promover a saúde e o bem-estar de meus interagentes/pacientes.</p>
-                            <p>Acredito que a verdadeira cura acontece quando olhamos para o ser humano de forma integral, respeitando a profunda conexão entre as nossas emoções, o nosso corpo e a nossa energia vital. Minha missão é ser uma facilitadora nesse processo de redescoberta e reequilíbrio.</p>
-                            <p>A Naturologia traz uma abordagem de cuidados de saúde com práticas terapêuticas integrativas e complementares, que visa tratar o interagente/paciente de forma integral. Esse modelo de atendimento enfatiza a importância do relacionamento da profissional com o interagente/paciente e considera o bem-estar físico, emocional, mental, social e espiritual.</p>
-                            <p>Como Naturóloga/Acupunturista, abordo uma gama de práticas terapêuticas como a Acupuntura, Aromaterapia, Auriculoterapia, Fitoterapia, Florais de Bach, Ventosaterapia, Reiki, entre outras, que podem ser incorporadas ao tratamento sempre que necessário.</p>
-                            <p>Acredito que cada indivíduo é único e, por isso, meu trabalho é baseado em uma abordagem integrativa e personalizada. Utilizo um conjunto de práticas terapêuticas naturais, cientificamente embasadas e/ou empíricas, para criar um plano de tratamento que respeita sua história, seu corpo e seus objetivos.</p>
-                            <p>Minha missão é ser uma facilitadora no seu processo de reconexão com a sua própria natureza, guiando você em um caminho de mais saúde, consciência e bem-estar duradouro.</p>
+                            <p>Olá, eu sou Ilze Petris. Minha paixão pela capacidade de autocura do ser humano me guiou até a Naturologia e a Acupuntura. Acredito que a verdadeira saúde floresce do equilíbrio entre mente, corpo e espírito.</p>
+                            <p>Na Clínica Gaia, meu propósito é ser uma facilitadora na sua jornada de reconexão, criando um plano de tratamento personalizado que desperta sua vitalidade e promove um bem-estar duradouro.</p>
                         </div>
-                        <a href="https://api.whatsapp.com/send/?phone=554899071442&text=Ol%C3%A1%21+Tenho+interesse+em+agendar+uma+consulta+&type=phone_number&app_absent=0" target="_blank" class="mt-8 inline-block text-accent-orange font-semibold border-b-2 border-accent-orange hover:text-opacity-80 transition-all">Vamos conversar?</a>
+                        <a href="sobre.html" class="mt-8 inline-block rounded-lg bg-accent-orange px-6 py-3 text-base font-medium text-white shadow-md hover:bg-accent-orange-dark focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2 transition-all">
+                            Conheça minha jornada
+                        </a>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Section 3: Terapias (UPDATED) -->
+        <!-- Section 3: Terapias -->
         <section id="terapias" class="py-20 md:py-32 bg-natural-200">
             <div class="container mx-auto px-6 text-center">
-                <h2 class="text-4xl md:text-5xl font-serif text-primary-green mb-4 fade-in" x-intersect.once="el.classList.add('visible')">Caminhos para o Bem-Estar</h2>
-                <p class="max-w-3xl mx-auto text-lg text-gray-600 mb-16 fade-in" x-intersect.once="el.classList.add('visible'); el.style.transitionDelay = '200ms'">
+                <h2 class="text-4xl md:text-5xl font-serif text-primary-green mb-4 fade-in">Caminhos para o Bem-Estar</h2>
+                <p class="max-w-3xl mx-auto text-lg text-gray-600 mb-16 fade-in">
                     Explore as ferramentas que utilizo para criar um plano de tratamento sinérgico e personalizado.
                 </p>
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
                     <!-- Terapia Card: Acupuntura -->
-                    <div class="bg-white p-8 rounded-lg shadow-lg text-center hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 fade-in" x-intersect.once="el.classList.add('visible'); el.style.transitionDelay = '300ms'"><div class="w-16 h-16 mx-auto text-light-green"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.75a.75.75 0 1 1 0-1.5.75.75 0 0 1 0 1.5ZM12 12.75a.75.75 0 1 1 0-1.5.75.75 0 0 1 0 1.5ZM12 18.75a.75.75 0 1 1 0-1.5.75.75 0 0 1 0 1.5Z" /><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25H12" /></svg></div><h3 class="text-2xl font-serif mt-4 mb-2 text-primary-green">Acupuntura</h3><p class="text-gray-600 text-sm">Sabedoria milenar para a saúde moderna, restaurando o fluxo de energia vital.</p><button @click="openModal = true; modalContent = therapies.acupuntura" class="mt-4 text-accent-orange font-semibold">Saber Mais</button></div>
+                    <div class="bg-white p-8 rounded-lg shadow-lg text-center hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 fade-in flex flex-col"><div class="w-16 h-16 mx-auto text-light-green"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.75a.75.75 0 1 1 0-1.5.75.75 0 0 1 0 1.5ZM12 12.75a.75.75 0 1 1 0-1.5.75.75 0 0 1 0 1.5ZM12 18.75a.75.75 0 1 1 0-1.5.75.75 0 0 1 0 1.5Z" /><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25H12" /></svg></div><h3 class="text-2xl font-serif mt-4 mb-2 text-primary-green">Acupuntura</h3><p class="text-gray-600 text-sm flex-grow">Sabedoria milenar para a saúde moderna, restaurando o fluxo de energia vital.</p><a href="terapias.html?terapia=acupuntura" class="mt-4 text-accent-orange font-semibold">Saber Mais</a></div>
                     <!-- Terapia Card: Reiki -->
-                    <div class="bg-white p-8 rounded-lg shadow-lg text-center hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 fade-in" x-intersect.once="el.classList.add('visible'); el.style.transitionDelay = '400ms'"><div class="w-16 h-16 mx-auto text-light-green"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" /></svg></div><h3 class="text-2xl font-serif mt-4 mb-2 text-primary-green">Reiki</h3><p class="text-gray-600 text-sm">Reequilíbrio energético através da imposição das mãos, promovendo relaxamento.</p><button @click="openModal = true; modalContent = therapies.reiki" class="mt-4 text-accent-orange font-semibold">Saber Mais</button></div>
+                    <div class="bg-white p-8 rounded-lg shadow-lg text-center hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 fade-in flex flex-col"><div class="w-16 h-16 mx-auto text-light-green"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" /></svg></div><h3 class="text-2xl font-serif mt-4 mb-2 text-primary-green">Reiki</h3><p class="text-gray-600 text-sm flex-grow">Reequilíbrio energético através da imposição das mãos, promovendo relaxamento.</p><a href="terapias.html?terapia=reiki" class="mt-4 text-accent-orange font-semibold">Saber Mais</a></div>
                     <!-- Terapia Card: Aromaterapia -->
-                    <div class="bg-white p-8 rounded-lg shadow-lg text-center hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 fade-in" x-intersect.once="el.classList.add('visible'); el.style.transitionDelay = '500ms'"><div class="w-16 h-16 mx-auto text-light-green"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M15.59 14.37a6 6 0 0 1-5.84 7.38v.01h-.002a6 6 0 0 1-5.84-7.38l.002-.01.002-.01-.002-.01a6 6 0 0 1 7.38-5.84l.01.002.01.002.01-.002a6 6 0 0 1 5.84 7.38l-.002.01-.002.01.002.01Z" /></svg></div><h3 class="text-2xl font-serif mt-4 mb-2 text-primary-green">Aromaterapia</h3><p class="text-gray-600 text-sm">Equilíbrio através do poder terapêutico dos óleos essenciais puros.</p><button @click="openModal = true; modalContent = therapies.aromaterapia" class="mt-4 text-accent-orange font-semibold">Saber Mais</button></div>
-                    <!-- Terapia Card: Cromoterapia -->
-                    <div class="bg-white p-8 rounded-lg shadow-lg text-center hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 fade-in" x-intersect.once="el.classList.add('visible'); el.style.transitionDelay = '600ms'"><div class="w-16 h-16 mx-auto text-light-green"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21.752 15.002A9.72 9.72 0 0 1 18 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 0 0 3 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 0 0 9.002-5.998Z" /></svg></div><h3 class="text-2xl font-serif mt-4 mb-2 text-primary-green">Cromoterapia</h3><p class="text-gray-600 text-sm">Harmonização do corpo e da mente através das cores e suas frequências.</p><button @click="openModal = true; modalContent = therapies.cromoterapia" class="mt-4 text-accent-orange font-semibold">Saber Mais</button></div>
-                    <!-- Terapia Card: Auriculoterapia -->
-                    <div class="bg-white p-8 rounded-lg shadow-lg text-center hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 fade-in" x-intersect.once="el.classList.add('visible'); el.style.transitionDelay = '300ms'"><div class="w-16 h-16 mx-auto text-light-green"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 9V4.5M9 9H4.5M9 9L3.75 3.75M9 15v4.5M9 15H4.5M9 15l-5.25 5.25M15 9h4.5M15 9V4.5M15 9l5.25-5.25M15 15h4.5M15 15v4.5M15 15l5.25 5.25" /></svg></div><h3 class="text-2xl font-serif mt-4 mb-2 text-primary-green">Auriculoterapia</h3><p class="text-gray-600 text-sm">Estímulo de pontos na orelha para tratar desequilíbrios em todo o corpo.</p><button @click="openModal = true; modalContent = therapies.auriculoterapia" class="mt-4 text-accent-orange font-semibold">Saber Mais</button></div>
-                    <!-- Terapia Card: Geoterapia -->
-                    <div class="bg-white p-8 rounded-lg shadow-lg text-center hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 fade-in" x-intersect.once="el.classList.add('visible'); el.style.transitionDelay = '400ms'"><div class="w-16 h-16 mx-auto text-light-green"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 21v-7.5c0-.933.264-1.805.726-2.553M13.5 21H21v-7.5c0-.933-.264-1.805-.726-2.553M13.5 21H3v-7.5c0-.933.264-1.805.726-2.553m9.548-2.896A4.502 4.502 0 0 0 12 6.75c-1.255 0-2.413.43-3.274 1.151M15 3.75a9 9 0 0 1 6 6m-12 0a9 9 0 0 1 6-6" /></svg></div><h3 class="text-2xl font-serif mt-4 mb-2 text-primary-green">Geoterapia</h3><p class="text-gray-600 text-sm">Uso terapêutico da argila para desintoxicação, alívio de dores e inflamações.</p><button @click="openModal = true; modalContent = therapies.geoterapia" class="mt-4 text-accent-orange font-semibold">Saber Mais</button></div>
-                    <!-- Terapia Card: Fitoterapia -->
-                    <div class="bg-white p-8 rounded-lg shadow-lg text-center hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 fade-in" x-intersect.once="el.classList.add('visible'); el.style.transitionDelay = '500ms'"><div class="w-16 h-16 mx-auto text-light-green"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M16.5 18.75h-9a9.75 9.75 0 0 1 0-13.5h9a9.75 9.75 0 0 1 0 13.5Z" /><path stroke-linecap="round" stroke-linejoin="round" d="M12 15.75V9" /></svg></div><h3 class="text-2xl font-serif mt-4 mb-2 text-primary-green">Fitoterapia</h3><p class="text-gray-600 text-sm">Utilização de plantas medicinais para prevenção e tratamento de doenças.</p><button @click="openModal = true; modalContent = therapies.fitoterapia" class="mt-4 text-accent-orange font-semibold">Saber Mais</button></div>
-                    <!-- Terapia Card: Florais de Bach -->
-                    <div class="bg-white p-8 rounded-lg shadow-lg text-center hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 fade-in" x-intersect.once="el.classList.add('visible'); el.style.transitionDelay = '600ms'"><div class="w-16 h-16 mx-auto text-light-green"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9.004 9.004 0 0 0 8.716-6.747M12 21a9.004 9.004 0 0 1-8.716-6.747M12 21c1.355 0 2.707-.157 4-.447M12 21c-1.355 0-2.707-.157-4-.447M12 3c1.355 0 2.707.157 4 .447M12 3c-1.355 0-2.707.157-4 .447M4.284 6.253A9.004 9.004 0 0 1 12 3m0 18a9.004 9.004 0 0 0 7.716-3.253M12 3a9.004 9.004 0 0 0-7.716 3.253" /></svg></div><h3 class="text-2xl font-serif mt-4 mb-2 text-primary-green">Florais de Bach</h3><p class="text-gray-600 text-sm">Essências florais para equilibrar as emoções e promover o bem-estar mental.</p><button @click="openModal = true; modalContent = therapies.floraisDeBach" class="mt-4 text-accent-orange font-semibold">Saber Mais</button></div>
-                    <!-- Terapia Card: Gua Sha -->
-                    <div class="bg-white p-8 rounded-lg shadow-lg text-center hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 fade-in" x-intersect.once="el.classList.add('visible'); el.style.transitionDelay = '300ms'"><div class="w-16 h-16 mx-auto text-light-green"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M15.182 15.182a4.5 4.5 0 0 1-6.364 0M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0ZM15.93 15.93a4.5 4.5 0 0 1-6.364-6.364" /></svg></div><h3 class="text-2xl font-serif mt-4 mb-2 text-primary-green">Gua Sha</h3><p class="text-gray-600 text-sm">Técnica de raspagem que promove a circulação e alivia tensões musculares.</p><button @click="openModal = true; modalContent = therapies.guaSha" class="mt-4 text-accent-orange font-semibold">Saber Mais</button></div>
-                    <!-- Terapia Card: Moxabustão -->
-                    <div class="bg-white p-8 rounded-lg shadow-lg text-center hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 fade-in" x-intersect.once="el.classList.add('visible'); el.style.transitionDelay = '400ms'"><div class="w-16 h-16 mx-auto text-light-green"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M15.362 5.214A8.252 8.252 0 0 1 12 21 8.25 8.25 0 0 1 6.038 7.047 8.287 8.287 0 0 0 9 9.601a8.287 8.287 0 0 0 3-7.284 8.252 8.252 0 0 1 3.362 2.897Z" /></svg></div><h3 class="text-2xl font-serif mt-4 mb-2 text-primary-green">Moxabustão</h3><p class="text-gray-600 text-sm">Aplicação de calor em pontos de acupuntura para fortalecer a energia vital.</p><button @click="openModal = true; modalContent = therapies.moxabustao" class="mt-4 text-accent-orange font-semibold">Saber Mais</button></div>
-                    <!-- Terapia Card: Massoterapia Clínica -->
-                    <div class="bg-white p-8 rounded-lg shadow-lg text-center hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 fade-in" x-intersect.once="el.classList.add('visible'); el.style.transitionDelay = '500ms'"><div class="w-16 h-16 mx-auto text-light-green"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" /></svg></div><h3 class="text-2xl font-serif mt-4 mb-2 text-primary-green">Massoterapia</h3><p class="text-gray-600 text-sm">Conjunto de técnicas de massagem para alívio de dores e bem-estar.</p><button @click="openModal = true; modalContent = therapies.massoterapia" class="mt-4 text-accent-orange font-semibold">Saber Mais</button></div>
-                    <!-- Terapia Card: Reflexoterapia -->
-                    <div class="bg-white p-8 rounded-lg shadow-lg text-center hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 fade-in" x-intersect.once="el.classList.add('visible'); el.style.transitionDelay = '600ms'"><div class="w-16 h-16 mx-auto text-light-green"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9.75v6.75m0-10.5v.01M4.875 7.125a9.75 9.75 0 0 1 14.25 0M4.875 16.875a9.75 9.75 0 0 1 14.25 0" /></svg></div><h3 class="text-2xl font-serif mt-4 mb-2 text-primary-green">Reflexoterapia</h3><p class="text-gray-600 text-sm">Estímulo de pontos nos pés que correspondem a órgãos e sistemas do corpo.</p><button @click="openModal = true; modalContent = therapies.reflexoterapia" class="mt-4 text-accent-orange font-semibold">Saber Mais</button></div>
-                    <!-- Terapia Card: Shiroabhyanga -->
-                    <div class="bg-white p-8 rounded-lg shadow-lg text-center hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 fade-in" x-intersect.once="el.classList.add('visible'); el.style.transitionDelay = '300ms'"><div class="w-16 h-16 mx-auto text-light-green"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 15.75l-2.489-2.489m0 0a3.375 3.375 0 1 0-4.773-4.773 3.375 3.375 0 0 0 4.774 4.774ZM21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" /></svg></div><h3 class="text-2xl font-serif mt-4 mb-2 text-primary-green">Shiroabhyanga</h3><p class="text-gray-600 text-sm">Massagem indiana na cabeça que alivia o estresse e melhora a clareza mental.</p><button @click="openModal = true; modalContent = therapies.shiroabhyanga" class="mt-4 text-accent-orange font-semibold">Saber Mais</button></div>
-                    <!-- Terapia Card: Ventosaterapia -->
-                    <div class="bg-white p-8 rounded-lg shadow-lg text-center hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 fade-in" x-intersect.once="el.classList.add('visible'); el.style.transitionDelay = '400ms'"><div class="w-16 h-16 mx-auto text-light-green"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 3v11.25A2.25 2.25 0 0 0 6 16.5h12A2.25 2.25 0 0 0 20.25 14.25V3M3.75 21h16.5M12 3v18" /></svg></div><h3 class="text-2xl font-serif mt-4 mb-2 text-primary-green">Ventosaterapia</h3><p class="text-gray-600 text-sm">Aplicação de ventosas para melhorar a circulação e aliviar dores musculares.</p><button @click="openModal = true; modalContent = therapies.ventosaterapia" class="mt-4 text-accent-orange font-semibold">Saber Mais</button></div>
+                    <div class="bg-white p-8 rounded-lg shadow-lg text-center hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 fade-in flex flex-col"><div class="w-16 h-16 mx-auto text-light-green"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 00-2.456 2.456zM16.898 20.572L16.5 21.75l-.398-1.178a3.375 3.375 0 00-2.455-2.456L12.75 18l1.178-.398a3.375 3.375 0 002.455-2.456L16.5 14.25l.398 1.178a3.375 3.375 0 002.456 2.456L20.25 18l-1.178.398a3.375 3.375 0 00-2.456 2.456z" /></svg></div><h3 class="text-2xl font-serif mt-4 mb-2 text-primary-green">Aromaterapia</h3><p class="text-gray-600 text-sm flex-grow">Equilíbrio através do poder terapêutico dos óleos essenciais puros.</p><a href="terapias.html?terapia=aromaterapia" class="mt-4 text-accent-orange font-semibold">Saber Mais</a></div>
+                     <!-- Card Conheça Mais -->
+                    <a href="terapias.html" class="bg-white p-8 rounded-lg shadow-lg text-center hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 flex flex-col justify-center items-center border-2 border-dashed border-gray-300 hover:border-accent-orange fade-in">
+                        <div class="text-accent-orange">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                              <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-serif mt-4 mb-2 text-primary-green">Conheça Mais</h3>
+                        <p class="text-gray-600 text-sm">Veja todas as nossas práticas terapêuticas.</p>
+                    </a>
                 </div>
             </div>
         </section>
@@ -286,12 +273,12 @@
         <!-- Section: Gallery -->
         <section id="galeria" class="py-20 md:py-32">
             <div class="container mx-auto px-6">
-                <div class="text-center mb-16"><h2 class="text-4xl md:text-5xl font-serif text-primary-green mb-4 fade-in" x-intersect.once="el.classList.add('visible')">Conheça a Nossa Clínica</h2><p class="max-w-3xl mx-auto text-lg text-gray-600 fade-in" x-intersect.once="el.classList.add('visible'); el.style.transitionDelay = '200ms'">Um espaço pensado em cada detalhe para promover calma, acolhimento e bem-estar.</p></div>
+                <div class="text-center mb-16"><h2 class="text-4xl md:text-5xl font-serif text-primary-green mb-4 fade-in">Conheça a Nossa Clínica</h2><p class="max-w-3xl mx-auto text-lg text-gray-600 fade-in">Um espaço pensado em cada detalhe para promover calma, acolhimento e bem-estar.</p></div>
                 <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-                    <div class="grid gap-4"><div class="fade-in" x-intersect.once="el.classList.add('visible'); el.style.transitionDelay = '300ms'"><img class="h-auto max-w-full rounded-lg shadow-md hover:shadow-xl transition-shadow" src="/imgs/2.png" alt="Foto da clínica"></div><div class="fade-in" x-intersect.once="el.classList.add('visible'); el.style.transitionDelay = '400ms'"><img class="h-auto max-w-full rounded-lg shadow-md hover:shadow-xl transition-shadow" src="/imgs/1.png" alt="Foto de detalhe da clínica"></div></div>
-                    <div class="grid gap-4"><div class="fade-in" x-intersect.once="el.classList.add('visible'); el.style.transitionDelay = '500ms'"><img class="h-auto max-w-full rounded-lg shadow-md hover:shadow-xl transition-shadow" src="/imgs/4.png" alt="Foto de detalhe da clínica"></div><div class="fade-in" x-intersect.once="el.classList.add('visible'); el.style.transitionDelay = '600ms'"><img class="h-auto max-w-full rounded-lg shadow-md hover:shadow-xl transition-shadow" src="/imgs/3.png" alt="Foto da clínica"></div></div>
-                    <div class="grid gap-4"><div class="fade-in" x-intersect.once="el.classList.add('visible'); el.style.transitionDelay = '700ms'"><img class="h-auto max-w-full rounded-lg shadow-md hover:shadow-xl transition-shadow" src="/imgs/6.png" alt="Foto da clínica"></div><div class="fade-in" x-intersect.once="el.classList.add('visible'); el.style.transitionDelay = '800ms'"><img class="h-auto max-w-full rounded-lg shadow-md hover:shadow-xl transition-shadow" src="/imgs/5.png" alt="Foto de detalhe da clínica"></div></div>
-                    <div class="grid gap-4"><div class="fade-in" x-intersect.once="el.classList.add('visible'); el.style.transitionDelay = '900ms'"><img class="h-auto max-w-full rounded-lg shadow-md hover:shadow-xl transition-shadow" src="/imgs/8.png" alt="Foto de detalhe da clínica"></div><div class="fade-in" x-intersect.once="el.classList.add('visible'); el.style.transitionDelay = '1000ms'"><img class="h-auto max-w-full rounded-lg shadow-md hover:shadow-xl transition-shadow" src="/imgs/7.png" alt="Foto da clínica"></div></div>
+                    <div class="grid gap-4"><div class="fade-in"><img class="h-auto max-w-full rounded-lg shadow-md hover:shadow-xl transition-shadow" src="/imgs/2.png" alt="Foto da clínica"></div><div class="fade-in"><img class="h-auto max-w-full rounded-lg shadow-md hover:shadow-xl transition-shadow" src="/imgs/1.png" alt="Foto de detalhe da clínica"></div></div>
+                    <div class="grid gap-4"><div class="fade-in"><img class="h-auto max-w-full rounded-lg shadow-md hover:shadow-xl transition-shadow" src="/imgs/4.png" alt="Foto de detalhe da clínica"></div><div class="fade-in"><img class="h-auto max-w-full rounded-lg shadow-md hover:shadow-xl transition-shadow" src="/imgs/3.png" alt="Foto da clínica"></div></div>
+                    <div class="grid gap-4"><div class="fade-in"><img class="h-auto max-w-full rounded-lg shadow-md hover:shadow-xl transition-shadow" src="/imgs/6.png" alt="Foto da clínica"></div><div class="fade-in"><img class="h-auto max-w-full rounded-lg shadow-md hover:shadow-xl transition-shadow" src="/imgs/5.png" alt="Foto de detalhe da clínica"></div></div>
+                    <div class="grid gap-4"><div class="fade-in"><img class="h-auto max-w-full rounded-lg shadow-md hover:shadow-xl transition-shadow" src="/imgs/8.png" alt="Foto de detalhe da clínica"></div><div class="fade-in"><img class="h-auto max-w-full rounded-lg shadow-md hover:shadow-xl transition-shadow" src="/imgs/7.png" alt="Foto da clínica"></div></div>
                 </div>
             </div>
         </section>
@@ -299,9 +286,9 @@
         <!-- Testimonials Carousel Section -->
         <section id="depoimentos" class="py-20 md:py-32 bg-natural-200">
              <div class="w-full max-w-4xl mx-auto px-4 md:px-8">
-                <h2 class="text-4xl md:text-5xl font-serif text-primary-green text-center mb-12 fade-in" x-intersect.once="el.classList.add('visible')">O que nossos clientes dizem</h2>
+                <h2 class="text-4xl md:text-5xl font-serif text-primary-green text-center mb-12 fade-in">O que nossos clientes dizem</h2>
 
-                <div id="review-carousel" class="relative overflow-hidden bg-white rounded-2xl shadow-lg fade-in" x-intersect.once="el.classList.add('visible')">
+                <div id="review-carousel" class="relative overflow-hidden bg-white rounded-2xl shadow-lg fade-in">
                     <div id="carousel-wrapper" class="flex carousel-wrapper">
                         <!-- Review cards will be injected here by JavaScript -->
                     </div>
@@ -319,13 +306,73 @@
                 </div>
             </div>
         </section>
+        
+        <!-- FAQ Section -->
+        <section id="faq" class="py-20 md:py-32">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl md:text-5xl font-serif text-primary-green mb-4 fade-in">Perguntas Frequentes</h2>
+                    <p class="max-w-3xl mx-auto text-lg text-gray-600 fade-in">Tire suas dúvidas sobre nossos tratamentos e abordagem.</p>
+                </div>
+                <div class="max-w-3xl mx-auto space-y-4" x-data="{ open: 1 }">
+                    <!-- FAQ Item 1 -->
+                    <div class="bg-white rounded-lg shadow-md fade-in">
+                        <button @click="open = (open === 1 ? 0 : 1)" class="w-full flex justify-between items-center text-left p-6">
+                            <span class="text-lg font-semibold text-primary-green">O que são práticas integrativas?</span>
+                            <svg :class="{ 'transform rotate-180': open === 1 }" class="w-6 h-6 text-accent-orange transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </button>
+                        <div x-show="open === 1" x-collapse.duration.300ms class="overflow-hidden">
+                            <div class="p-6 pt-0 text-gray-700">
+                                <p>São práticas terapêuticas que consideram o ser humano de forma integral (mente, corpo e espírito). Elas complementam a medicina convencional, focando na causa dos desequilíbrios para promover a saúde e o bem-estar de forma natural e completa.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- FAQ Item 2 -->
+                    <div class="bg-white rounded-lg shadow-md fade-in">
+                        <button @click="open = (open === 2 ? 0 : 2)" class="w-full flex justify-between items-center text-left p-6">
+                            <span class="text-lg font-semibold text-primary-green">Preciso de encaminhamento médico?</span>
+                            <svg :class="{ 'transform rotate-180': open === 2 }" class="w-6 h-6 text-accent-orange transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </button>
+                        <div x-show="open === 2" x-collapse.duration.300ms class="overflow-hidden">
+                            <div class="p-6 pt-0 text-gray-700">
+                                <p>Não, você não precisa de um encaminhamento médico para agendar uma consulta. Nossas terapias são abertas a todos que buscam mais saúde e equilíbrio em suas vidas. No entanto, sempre incentivamos a comunicação transparente com todos os profissionais de saúde que acompanham você.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- FAQ Item 3 -->
+                    <div class="bg-white rounded-lg shadow-md fade-in">
+                        <button @click="open = (open === 3 ? 0 : 3)" class="w-full flex justify-between items-center text-left p-6">
+                            <span class="text-lg font-semibold text-primary-green">Como funciona a primeira consulta?</span>
+                            <svg :class="{ 'transform rotate-180': open === 3 }" class="w-6 h-6 text-accent-orange transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </button>
+                        <div x-show="open === 3" x-collapse.duration.300ms class="overflow-hidden">
+                            <div class="p-6 pt-0 text-gray-700">
+                                <p>A primeira consulta é uma conversa detalhada (anamnese) para entendermos suas queixas, histórico de saúde e objetivos. Com base nessa avaliação, criamos juntos um plano terapêutico personalizado, combinando as práticas mais indicadas para o seu caso.</p>
+                            </div>
+                        </div>
+                    </div>
+                     <!-- FAQ Item 4 -->
+                    <div class="bg-white rounded-lg shadow-md fade-in">
+                        <button @click="open = (open === 4 ? 0 : 4)" class="w-full flex justify-between items-center text-left p-6">
+                            <span class="text-lg font-semibold text-primary-green">Qual a duração de uma sessão?</span>
+                            <svg :class="{ 'transform rotate-180': open === 4 }" class="w-6 h-6 text-accent-orange transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </button>
+                        <div x-show="open === 4" x-collapse.duration.300ms class="overflow-hidden">
+                            <div class="p-6 pt-0 text-gray-700">
+                                <p>A duração pode variar dependendo da terapia ou da combinação de práticas definidas no seu plano de tratamento. Em geral, as sessões duram entre 50 a 90 minutos. A primeira consulta costuma ser um pouco mais longa.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
         <!-- Section: Contato e Agendamento -->
        <section id="contato" class="py-20 md:py-32 bg-light-green text-white">
             <div class="container mx-auto px-6">
-                <div class="text-center"><h2 class="text-4xl md:text-5xl font-serif text-white mb-4 fade-in" x-intersect.once="el.classList.add('visible')">Pronta(o) para Começar?</h2><p class="max-w-3xl mx-auto text-lg text-white/95 mb-12 fade-in" x-intersect.once="el.classList.add('visible')">Dê o primeiro passo na sua jornada de cura e bem-estar. Entre em contato para agendar sua consulta.</p></div>
+                <div class="text-center"><h2 class="text-4xl md:text-5xl font-serif text-white mb-4 fade-in">Pronta(o) para Começar?</h2><p class="max-w-3xl mx-auto text-lg text-white/95 mb-12 fade-in">Dê o primeiro passo na sua jornada de cura e bem-estar. Entre em contato para agendar sua consulta.</p></div>
                 <div class="grid lg:grid-cols-2 gap-12 items-start">
-                    <div class="bg-white/10 p-8 rounded-lg fade-in" x-intersect.once="el.classList.add('visible')">
+                    <div class="bg-white/10 p-8 rounded-lg fade-in">
                         <h3 class="text-2xl font-serif mb-6">Envie uma Mensagem</h3>
                         <form id="whatsapp-form">
                             <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
@@ -338,9 +385,9 @@
                             <div id="form-status-message" class="mt-4 text-center text-white bg-red-500/70 p-3 rounded-lg transition-all hidden"></div>
                         </form>
                     </div>
-                    <div class="space-y-8 fade-in" x-intersect.once="el.classList.add('visible')">
-                        <div><h3 class="text-2xl font-serif mb-4">Informações de Contato</h3><div class="space-y-3 text-lg"><p><strong>Endereço:</strong> R. Esteves Júnior - Centro, Florianópolis - SC, 88015-130</p><p><strong>WhatsApp:</strong> <a href="https://wa.me/554899071442" target="_blank" class="hover:text-accent-orange transition">(48) 99907-1442</a></p><p><strong>E-mail:</strong> <a href="mailto:contato@clinicagaia.com" class="hover:text-accent-orange transition">contato@clinicagaia.com</a></p></div></div>
-                        <div><h3 class="text-2xl font-serif mb-4">Localização</h3><div class="rounded-lg overflow-hidden shadow-xl"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3535.850493867657!2d-48.55436282469446!3d-27.59194087625944!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x952738327171e839%3A0x8998961f6e246313!2sR.%20Esteves%20J%C3%BAnior%20-%20Centro%2C%20Florian%C3%B3polis%20-%20SC%2C%2088015-130!5e0!3m2!1spt-BR!2sbr!4v1689202345678!5m2!1spt-BR!2sbr" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div></div>
+                    <div class="space-y-8 fade-in">
+                        <div><h3 class="text-2xl font-serif mb-4">Informações de Contato</h3><div class="space-y-3 text-lg"><p><strong>Endereço:</strong> Edificio Top Tower, R. Esteves Júnior - Centro, Florianópolis - SC, 88015-130</p><p><strong>WhatsApp:</strong> <a href="https://wa.me/554899071442" target="_blank" class="hover:text-accent-orange transition">(48) 99907-1442</a></p><p><strong>E-mail:</strong> <a href="mailto:contato@clinicagaia.com" class="hover:text-accent-orange transition">contato@clinicagaia.com</a></p></div></div>
+                        <div><h3 class="text-2xl font-serif mb-4">Localização</h3><div class="rounded-lg overflow-hidden shadow-xl"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3535.9825898360364!2d-48.5548480245366!3d-27.594069376247745!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9527395c347eccf5%3A0xc749ae11223d0060!2sEdificio%20Top%20Tower!5e0!3m2!1spt-BR!2sbr!4v1754688731219!5m2!1spt-BR!2sbr" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div></div>
                     </div>
                 </div>
             </div>
@@ -408,24 +455,13 @@
                 const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
                 window.open(whatsappUrl, '_blank');
             });
-        }     
+        }    
     
-        // --- Therapies Data (UPDATED) ---
+        // --- Therapies Data ---
         const therapies = {
             acupuntura: { title: 'Acupuntura', content: `<h4>A Sabedoria Milenar para a Saúde Moderna</h4><p>A Acupuntura é uma prática central da Medicina Tradicional Chinesa (MTC). Baseia-se no princípio de que a energia vital, ou "Qi", flui através de canais no corpo. A terapia consiste na inserção de agulhas finas em pontos específicos para restaurar o fluxo de energia, estimulando o próprio corpo a se curar.</p><h4>Principais Benefícios</h4><ul><li>Alívio de dores crônicas e agudas</li><li>Redução do estresse e ansiedade</li><li>Melhora da qualidade do sono</li><li>Equilíbrio emocional e hormonal</li></ul>` },
             reiki: { title: 'Reiki', content: `<h4>Energia Universal para o Equilíbrio Interior</h4><p>Reiki é uma terapia japonesa de cura energética que utiliza a "energia vital universal". Através da imposição suave das mãos, o terapeuta canaliza essa energia para os centros energéticos (chakras), dissolvendo bloqueios e harmonizando o fluxo de energia do paciente, promovendo um relaxamento profundo.</p><h4>Principais Benefícios</h4><ul><li>Redução profunda do estresse e da ansiedade</li><li>Promove clareza mental e paz interior</li><li>Alivia tensões físicas e emocionais</li><li>Equilibra os centros de energia do corpo</li></ul>` },
             aromaterapia: { title: 'Aromaterapia', content: `<h4>A Alma das Plantas para a Harmonia do Ser</h4><p>Aromaterapia é a arte de utilizar óleos essenciais para equilibrar, harmonizar e promover a saúde do corpo, mente e espírito. Quando inalados, os aromas estimulam o sistema límbico no cérebro, a área que controla emoções e memórias. É uma terapia poderosa para o manejo de emoções.</p><h4>Principais Benefícios</h4><ul><li>Redução de estresse e ansiedade</li><li>Melhora do humor e da energia</li><li>Alívio de dores de cabeça</li><li>Promoção de um sono reparador</li></ul>` },
-            cromoterapia: { title: 'Cromoterapia', content: `<h4>A Energia das Cores para o Bem-estar</h4><p>A Cromoterapia utiliza as cores para restaurar o equilíbrio físico e emocional. Cada cor possui uma vibração energética específica que, ao ser aplicada, pode ajudar a harmonizar os chakras e a aliviar diversos sintomas, promovendo bem-estar e tranquilidade.</p><h4>Principais Benefícios</h4><ul><li>Equilíbrio dos chakras e do campo energético</li><li>Redução de ansiedade e estresse</li><li>Melhora em casos de insônia</li><li>Alívio de dores de cabeça e musculares</li></ul>` },
-            auriculoterapia: { title: 'Auriculoterapia', content: `<h4>O Corpo Refletido na Orelha</h4><p>A Auriculoterapia é uma técnica que utiliza o pavilhão auricular como um microssistema do corpo humano. Através do estímulo de pontos específicos na orelha com sementes, esferas ou agulhas, é possível tratar disfunções e promover o equilíbrio em diversas partes do corpo.</p><h4>Principais Benefícios</h4><ul><li>Tratamento de dores agudas e crônicas</li><li>Auxílio no controle da ansiedade e compulsões</li><li>Eficaz para problemas de insônia</li><li>Complemento em tratamentos de emagrecimento</li></ul>` },
-            geoterapia: { title: 'Geoterapia', content: `<h4>O Poder de Cura da Terra</h4><p>A Geoterapia utiliza as propriedades terapêuticas da argila para promover a saúde. Aplicada na pele, a argila possui ação desintoxicante, anti-inflamatória e cicatrizante, ajudando a absorver toxinas, aliviar dores e a revitalizar os tecidos.</p><h4>Principais Benefícios</h4><ul><li>Ação desintoxicante e purificante</li><li>Alívio de dores musculares e articulares</li><li>Redução de inflamações e edemas</li><li>Tratamentos estéticos para pele e cabelo</li></ul>` },
-            fitoterapia: { title: 'Fitoterapia', content: `<h4>A Farmácia da Natureza</h4><p>A Fitoterapia é o estudo e a aplicação de plantas medicinais para a prevenção e tratamento de doenças. Utiliza-se o conhecimento tradicional e científico para indicar chás, extratos e outras preparações que atuam de forma suave e eficaz no organismo.</p><h4>Principais Benefícios</h4><ul><li>Tratamento natural para diversas condições de saúde</li><li>Menos efeitos colaterais em comparação com sintéticos</li><li>Fortalecimento do sistema imunológico</li><li>Abordagem integrativa para a saúde</li></ul>` },
-            floraisDeBach: { title: 'Florais de Bach', content: `<h4>Equilíbrio Emocional com a Energia das Flores</h4><p>Os Florais de Bach são essências extraídas de flores que atuam no campo emocional. Desenvolvido pelo Dr. Edward Bach, o sistema conta com 38 essências, cada uma associada a uma emoção específica, ajudando a restaurar o equilíbrio e a harmonia interior.</p><h4>Principais Benefícios</h4><ul><li>Gestão de emoções como medo, raiva e ansiedade</li><li>Aumento da autoconfiança e autoestima</li><li>Clareza mental para tomada de decisões</li><li>Suporte em fases de transição e estresse</li></ul>` },
-            guaSha: { title: 'Gua Sha', content: `<h4>Liberação e Fluxo para o Alívio da Dor</h4><p>Gua Sha é uma técnica da Medicina Tradicional Chinesa que utiliza um instrumento de pedra ou jade para "raspar" a pele. Este movimento estimula a circulação sanguínea e linfática, liberando toxinas, aliviando a tensão muscular e promovendo o fluxo de energia (Qi).</p><h4>Principais Benefícios</h4><ul><li>Alívio imediato de dores e tensões musculares</li><li>Melhora da circulação e oxigenação dos tecidos</li><li>Redução de inflamações</li><li>Estímulo do sistema imunológico</li></ul>` },
-            moxabustao: { title: 'Moxabustão', content: `<h4>O Calor que Cura e Fortalece</h4><p>A Moxabustão é uma terapia que utiliza o calor gerado pela queima da erva Artemísia. O calor é aplicado sobre os pontos de acupuntura para aquecer os canais de energia, fortalecer o Qi (energia vital), dissipar o frio e a umidade, e promover a circulação.</p><h4>Principais Benefícios</h4><ul><li>Fortalecimento da energia vital e do sistema imune</li><li>Alívio de dores crônicas, especialmente as que pioram com o frio</li><li>Tratamento de problemas digestivos e ginecológicos</li><li>Sensação de conforto e bem-estar profundo</li></ul>` },
-            massoterapia: { title: 'Massoterapia Clínica', content: `<h4>O Toque Terapêutico para o Corpo e a Mente</h4><p>A Massoterapia Clínica envolve a aplicação de diversas técnicas de massagem com finalidade terapêutica. Vai além do relaxamento, focando no tratamento de dores específicas, reabilitação de lesões, melhora da postura e alívio de condições crônicas.</p><h4>Principais Benefícios</h4><ul><li>Alívio de dores musculares, contraturas e pontos de gatilho</li><li>Redução do estresse e melhora da qualidade do sono</li><li>Aumento da flexibilidade e mobilidade</li><li>Auxílio na recuperação de lesões</li></ul>` },
-            reflexoterapia: { title: 'Reflexoterapia Podal', content: `<h4>O Mapa do Corpo em Seus Pés</h4><p>A Reflexoterapia é uma técnica que aplica pressão em pontos específicos nos pés, que correspondem a órgãos, glândulas e outras partes do corpo. O estímulo desses pontos reflexos ajuda a liberar bloqueios energéticos, promovendo o equilíbrio e a capacidade de autocura do corpo.</p><h4>Principais Benefícios</h4><ul><li>Relaxamento profundo e redução do estresse</li><li>Melhora da circulação sanguínea e linfática</li><li>Alívio de dores de cabeça e enxaquecas</li><li>Equilíbrio do funcionamento de órgãos e sistemas</li></ul>` },
-            shiroabhyanga: { title: 'Shiroabhyanga', content: `<h4>Massagem Indiana na Cabeça</h4><p>Parte da medicina Ayurveda, a Shiroabhyanga é uma massagem focada na cabeça, pescoço e ombros. Utilizando óleos vegetais mornos, a técnica alivia a tensão acumulada, nutre o couro cabeludo, e promove um estado de profunda tranquilidade e clareza mental.</p><h4>Principais Benefícios</h4><ul><li>Alívio de dores de cabeça, enxaqueca e tensão no pescoço</li><li>Redução do estresse, ansiedade e insônia</li><li>Melhora da concentração e da memória</li><li>Estimula o crescimento e a saúde dos cabelos</li></ul>` },
-            ventosaterapia: { title: 'Ventosaterapia', content: `<h4>Sucção a Serviço da Saúde</h4><p>A Ventosaterapia é uma prática que utiliza ventosas (copos) para criar uma sucção na pele. Essa sucção aumenta o fluxo sanguíneo na área, libera a fáscia muscular, remove estagnações e toxinas, e promove o alívio de dores e a recuperação muscular.</p><h4>Principais Benefícios</h4><ul><li>Alívio eficaz de dores musculares e rigidez</li><li>Melhora da circulação sanguínea e linfática</li><li>Liberação de toxinas do corpo</li><li>Auxílio no tratamento de problemas respiratórios</li></ul>` }
         };
         window.therapies = therapies;
 
@@ -559,7 +595,7 @@
         // --- Intersection Observer for fade-in animations ---
         const fadeInElements = document.querySelectorAll('.fade-in');
         if ("IntersectionObserver" in window) {
-            const observer = new IntersectionObserver((entries) => {
+            const observer = new IntersectionObserver((entries, observer) => {
                 entries.forEach(entry => { 
                     if (entry.isIntersecting) { 
                         entry.target.classList.add('visible'); 
@@ -569,8 +605,6 @@
             }, { threshold: 0.1 });
 
             fadeInElements.forEach(el => { 
-                // Remove x-intersect attributes as we are handling it here
-                el.removeAttribute('x-intersect.once');
                 observer.observe(el); 
             });
         } else {

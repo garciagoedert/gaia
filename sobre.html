@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre Nós | Clínica Gaia</title>
+    
+    <!-- Favicon Placeholder -->
+    <link rel="icon" href="/imgs/favicon.svg" type="image/png">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    
+    <!-- Alpine.js for mobile menu -->
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+    <style>
+        /* Custom styles to integrate the new design system */
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #FBF9F6; /* Creamy white background */
+            color: #3C3C3C;
+            margin: 0;
+        }
+        h1, h2, h3, h4, .font-serif {
+            font-family: 'Playfair Display', serif;
+        }
+
+        /* Color Palette */
+        .bg-primary-green { background-color: #125d40; }
+        .text-primary-green { color: #125d40; }
+        .bg-light-green { background-color: #66a171; }
+        .text-light-green { color: #66a171; }
+        .bg-accent-orange { background-color: #f47d51; }
+        .text-accent-orange { color: #f47d51; }
+        .border-accent-orange { border-color: #f47d51; }
+        .hover\:bg-accent-orange-dark:hover { background-color: #ea4436; }
+        .bg-natural-200 { background-color: #FDFCF9; }
+
+        /* Animation */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* For hiding elements with Alpine.js */
+        [x-cloak] { display: none !important; }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Full-width Minimalist Header -->
+    <header x-data="{ mobileMenuOpen: false }" class="sticky top-0 left-0 z-40 w-full bg-white/80 backdrop-blur-md shadow-sm transition-all duration-300">
+        <div class="container mx-auto flex h-20 items-center justify-between px-6">
+            <!-- Logo -->
+            <div class="flex-shrink-0">
+                <a href="index.html" title="Início">
+                    <img src="/imgs/logo.svg" alt="Logo da Clínica Gaia" class="h-20 w-auto" onerror="this.onerror=null;this.src='https://placehold.co/150x80/FFFFFF/3C3C3C?text=Clínica+Gaia';">
+                </a>
+            </div>
+
+            <!-- Desktop Navigation -->
+            <nav class="hidden md:flex md:items-center md:space-x-8">
+                <a href="index.html" class="text-gray-700 hover:text-accent-orange transition-colors">Home</a>
+                <a href="sobre.html" class="text-accent-orange font-semibold">Sobre</a>
+                <a href="terapias.html" class="text-gray-700 hover:text-accent-orange transition-colors">Terapias</a>
+                <a href="index.html#depoimentos" class="text-gray-700 hover:text-accent-orange transition-colors">Depoimentos</a>
+                <a href="/contato.html"class="text-gray-700 hover:text-accent-orange transition-colors">Contato</a>
+            </nav>
+
+            <!-- Action Button -->
+            <div class="hidden md:block">
+                <a href="https://api.whatsapp.com/send/?phone=554899071442&text=Ol%C3%A1%21+Tenho+interesse+em+agendar+uma+consulta+&type=phone_number&app_absent=0" target="_blank" class="rounded-lg bg-accent-orange px-5 py-2.5 text-sm font-medium text-white shadow-md hover:bg-accent-orange-dark focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2 transition-all">
+                    Agendar Consulta
+                </a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <div class="md:hidden">
+                <button @click="mobileMenuOpen = !mobileMenuOpen" class="inline-flex items-center justify-center rounded-md p-2 text-primary-green hover:bg-gray-700/10 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
+                    <span class="sr-only">Abrir menu principal</span>
+                    <svg x-show="!mobileMenuOpen" class="block h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" /></svg>
+                    <svg x-show="mobileMenuOpen" x-cloak class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu (hidden by default) -->
+        <div x-show="mobileMenuOpen" x-cloak @click.away="mobileMenuOpen = false" x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-transition:leave="transition ease-in duration-150" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0" class="md:hidden absolute top-full w-full">
+            <div class="mx-4 mt-2 rounded-lg bg-white/95 p-4 shadow-lg ring-1 ring-black ring-opacity-5 backdrop-blur-md">
+                <nav class="space-y-2">
+                    <a href="index.html" @click="mobileMenuOpen = false" class="block rounded-md px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-100">Home</a>
+                    <a href="sobre.html" @click="mobileMenuOpen = false" class="block rounded-md px-3 py-2 text-base font-medium text-accent-orange bg-gray-100">Sobre</a>
+                    <a href="terapias.html" @click="mobileMenuOpen = false" class="block rounded-md px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-100">Terapias</a>
+                    <a href="index.html#depoimentos" @click="mobileMenuOpen = false" class="block rounded-md px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-100">Depoimentos</a>
+                    <a href="/contato.html" @click="mobileMenuOpen = false" class="block rounded-md px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-100">Contato</a>
+                    <a href="https://api.whatsapp.com/send/?phone=554899071442&text=Ol%C3%A1%21+Tenho+interesse+em+agendar+uma+consulta+&type=phone_number&app_absent=0" target="_blank" @click="mobileMenuOpen = false" class="mt-4 block w-full text-center rounded-lg bg-accent-orange px-4 py-2 text-base font-medium text-white shadow-md hover:bg-accent-orange-dark transition-all">
+                        Agendar Consulta
+                    </a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Section: Sobre a Clínica Gaia -->
+        <section id="sobre-clinica" class="py-20 md:py-24">
+            <div class="container mx-auto px-6">
+                <div class="grid md:grid-cols-2 gap-12 lg:gap-20 items-center">
+                    <div class="fade-in">
+                        <h1 class="text-4xl md:text-5xl font-serif text-primary-green mb-6">Nosso Santuário de Bem-Estar</h1>
+                        <div class="space-y-4 text-gray-700 leading-relaxed">
+                            <p>A Clínica Gaia nasceu de um propósito: criar um refúgio urbano onde a cura e o autoconhecimento pudessem florescer. Cada detalhe do nosso espaço foi pensado para transmitir tranquilidade, acolhimento e uma profunda sensação de paz, desde a escolha dos materiais naturais até a iluminação suave e a aromaterapia que perfuma o ambiente.</p>
+                            <p>Nossa filosofia é baseada na visão integral do ser humano. Entendemos que saúde é mais do que a ausência de doença; é um estado de equilíbrio dinâmico entre mente, corpo e espírito. Aqui, você não é apenas um paciente, mas um parceiro ativo na sua jornada de bem-estar.</p>
+                            <p>Convidamos você a fazer uma pausa na agitação do dia a dia, a respirar fundo e a se reconectar com sua essência em um ambiente seguro, profissional e profundamente humano.</p>
+                        </div>
+                    </div>
+                    <div class="max-w-sm mx-auto md:max-w-full fade-in">
+                        <img src="/imgs/1.png" alt="Detalhe do interior da Clínica Gaia" class="rounded-lg shadow-2xl object-cover w-full h-full" onerror="this.onerror=null;this.src='https://placehold.co/600x750/FDFCF9/3C3C3C?text=Ambiente+Acolhedor';">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section: Page Header & Mission/Values -->
+        <section class="bg-natural-200">
+            <div class="py-16 text-center">
+                <div class="container mx-auto px-6">
+                    <h2 class="text-5xl md:text-6xl font-serif text-primary-green">Nossa Essência</h2>
+                    <p class="mt-4 text-lg text-gray-700 max-w-2xl mx-auto">Conheça a filosofia que nos guia e a profissional que dá vida à Clínica Gaia.</p>
+                </div>
+            </div>
+            <div id="missao-valores" class="pb-20 md:pb-24">
+                <div class="container mx-auto px-6">
+                    <div class="grid md:grid-cols-3 gap-8 text-center">
+                        <!-- Mission Card -->
+                        <div class="fade-in p-6">
+                            <div class="flex justify-center items-center mx-auto w-20 h-20 rounded-full bg-light-green/30 text-light-green mb-6">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" /></svg>
+                            </div>
+                            <h3 class="text-2xl font-serif text-primary-green mb-3">Nossa Missão</h3>
+                            <p class="text-gray-600">Ser um farol de cura, guiando cada pessoa em sua jornada de reconexão com a própria natureza para um bem-estar integral e duradouro.</p>
+                        </div>
+                        <!-- Vision Card -->
+                        <div class="fade-in p-6">
+                            <div class="flex justify-center items-center mx-auto w-20 h-20 rounded-full bg-light-green/30 text-light-green mb-6">
+                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" /></svg>
+                            </div>
+                            <h3 class="text-2xl font-serif text-primary-green mb-3">Nossa Visão</h3>
+                            <p class="text-gray-600">Transformar vidas através de práticas integrativas, promovendo uma comunidade mais consciente, saudável e em harmonia com o todo.</p>
+                        </div>
+                        <!-- Values Card -->
+                        <div class="fade-in p-6">
+                            <div class="flex justify-center items-center mx-auto w-20 h-20 rounded-full bg-light-green/30 text-light-green mb-6">
+                               <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                  <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                               </svg>
+                            </div>
+                            <h3 class="text-2xl font-serif text-primary-green mb-3">Nossos Valores</h3>
+                            <p class="text-gray-600">Acolhimento, Cuidado Integral, Ética, Respeito à Individualidade e Paixão por promover a saúde em todos os níveis.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section: Sobre Ilze Petri -->
+        <section id="sobre-ilze" class="py-20 md:py-32">
+            <div class="container mx-auto px-6">
+                <div class="grid md:grid-cols-2 gap-12 lg:gap-20 items-center">
+                    <div class="max-w-sm mx-auto md:max-w-full fade-in order-last md:order-first">
+                        <img src="/imgs/ilze.png" alt="Retrato de Ilze Petri" class="rounded-lg shadow-2xl object-cover w-full h-full" onerror="this.onerror=null;this.src='https://placehold.co/600x750/FBF9F6/3C3C3C?text=Ilze+Petri';">
+                    </div>
+                    <div class="fade-in">
+                        <img src="imgs/ilzelogo.svg" alt="Logo de Ilze Petri" class="h-20 w-auto mb-6 opacity-80" onerror="this.onerror=null;this.src='https://placehold.co/200x80/FBF9F6/3C3C3C?text=Ilze+Petri';">
+                        <h2 class="text-4xl md:text-5xl font-serif text-primary-green mb-6">Minha Jornada com as Práticas Integrativas</h2>
+                        <div class="space-y-4 text-gray-700 leading-relaxed">
+                            <p>Olá, eu sou Ilze Petris, uma apaixonada pela capacidade de autocura do ser humano. Minha jornada na naturologia começou com um desejo profundo de ajudar as pessoas e entender a saúde além da ausência de doença, buscando a raiz dos desequilíbrios para promover uma vitalidade genuína. A pós-graduação em Acupuntura veio para aprimorar ainda mais meus conhecimentos e promover a saúde e o bem-estar de meus interagentes/pacientes.</p>
+                            <p>Acredito que a verdadeira cura acontece quando olhamos para o ser humano de forma integral, respeitando a profunda conexão entre as nossas emoções, o nosso corpo e a nossa energia vital. Minha missão é ser uma facilitadora nesse processo de redescoberta e reequilíbrio.</p>
+                             <p>Acredito que cada indivíduo é único e, por isso, meu trabalho é baseado em uma abordagem integrativa e personalizada. Utilizo um conjunto de práticas terapêuticas naturais, cientificamente embasadas e/ou empíricas, para criar um plano de tratamento que respeita sua história, seu corpo e seus objetivos.</p>
+                        </div>
+                        <a href="https://api.whatsapp.com/send/?phone=554899071442&text=Ol%C3%A1%21+Gostaria+de+conversar+sobre+as+terapias.&type=phone_number&app_absent=0" target="_blank" class="mt-8 inline-block text-accent-orange font-semibold border-b-2 border-accent-orange hover:text-opacity-80 transition-all">Vamos conversar?</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section: Qualifications -->
+        <section id="qualificacoes" class="py-20 md:py-24 bg-natural-200">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-4xl md:text-5xl font-serif text-primary-green mb-4 fade-in">Formação e Compromisso</h2>
+                <p class="max-w-3xl mx-auto text-lg text-gray-600 mb-12 fade-in">
+                    Conhecimento e dedicação contínua para oferecer o melhor cuidado.
+                </p>
+                <div class="max-w-4xl mx-auto grid sm:grid-cols-2 gap-8 text-left">
+                    <div class="bg-white p-8 rounded-lg shadow-lg fade-in">
+                        <h3 class="text-2xl font-serif text-primary-green mb-3">Graduação em Naturologia</h3>
+                        <p class="text-gray-600">Base sólida na compreensão da saúde integral e das terapias naturais, focando na individualidade de cada ser.</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-lg shadow-lg fade-in">
+                        <h3 class="text-2xl font-serif text-primary-green mb-3">Pós-Graduação em Acupuntura</h3>
+                        <p class="text-gray-600">Aprofundamento na milenar Medicina Tradicional Chinesa para restaurar o equilíbrio energético e promover a saúde.</p>
+                    </div>
+                </div>
+                <div class="max-w-4xl mx-auto mt-8 bg-white p-8 rounded-lg shadow-lg fade-in">
+                    <h3 class="text-2xl font-serif text-primary-green mb-4 text-center">Certificações e Cursos Complementares</h3>
+                    <p class="text-center text-gray-600 mb-6">Em constante aprendizado para integrar as mais eficazes técnicas de bem-estar:</p>
+                    <ul class="grid grid-cols-2 sm:grid-cols-3 gap-x-8 gap-y-4 text-gray-700">
+                        <li class="flex items-center"><svg class="w-5 h-5 mr-2 text-light-green flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Reiki</li>
+                        <li class="flex items-center"><svg class="w-5 h-5 mr-2 text-light-green flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Aromaterapia</li>
+                        <li class="flex items-center"><svg class="w-5 h-5 mr-2 text-light-green flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Cromoterapia</li>
+                        <li class="flex items-center"><svg class="w-5 h-5 mr-2 text-light-green flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Auriculoterapia</li>
+                        <li class="flex items-center"><svg class="w-5 h-5 mr-2 text-light-green flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Fitoterapia</li>
+                        <li class="flex items-center"><svg class="w-5 h-5 mr-2 text-light-green flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Florais de Bach</li>
+                        <li class="flex items-center"><svg class="w-5 h-5 mr-2 text-light-green flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Ventosaterapia</li>
+                        <li class="flex items-center"><svg class="w-5 h-5 mr-2 text-light-green flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Massoterapia</li>
+                        <li class="flex items-center"><svg class="w-5 h-5 mr-2 text-light-green flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>E muitas outras...</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section: Contact and Location -->
+        <section id="contato" class="py-20 md:py-32 bg-light-green text-white">
+            <div class="container mx-auto px-6">
+                <div class="text-center"><h2 class="text-4xl md:text-5xl font-serif text-white mb-4 fade-in">Pronta(o) para Começar?</h2><p class="max-w-3xl mx-auto text-lg text-white/95 mb-12 fade-in">Dê o primeiro passo na sua jornada de cura e bem-estar. Entre em contato para agendar sua consulta.</p></div>
+                <div class="grid lg:grid-cols-2 gap-12 items-start">
+                    <div class="space-y-8 fade-in">
+                        <div><h3 class="text-2xl font-serif mb-4">Informações de Contato</h3><div class="space-y-3 text-lg"><p><strong>Endereço:</strong> Edificio Top Tower, R. Esteves Júnior - Centro, Florianópolis - SC, 88015-130</p><p><strong>WhatsApp:</strong> <a href="https://wa.me/554899071442" target="_blank" class="hover:text-accent-orange transition">(48) 99907-1442</a></p><p><strong>E-mail:</strong> <a href="mailto:contato@clinicagaia.com" class="hover:text-accent-orange transition">contato@clinicagaia.com</a></p></div></div>
+                        <a href="https://api.whatsapp.com/send/?phone=554899071442&text=Ol%C3%A1%21+Tenho+interesse+em+agendar+uma+consulta+&type=phone_number&app_absent=0" target="_blank" class="inline-block w-full text-center rounded-lg bg-accent-orange px-6 py-4 text-lg font-medium text-white shadow-md hover:bg-accent-orange-dark focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2 transition-all">
+                            Agendar via WhatsApp
+                        </a>
+                    </div>
+                    <div class="fade-in">
+                        <h3 class="text-2xl font-serif mb-4 text-center lg:text-left">Nossa Localização</h3>
+                        <div class="rounded-lg overflow-hidden shadow-xl">
+                         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3535.9825898360364!2d-48.5548480245366!3d-27.594069376247745!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9527395c347eccf5%3A0xc749ae11223d0060!2sEdificio%20Top%20Tower!5e0!3m2!1spt-BR!2sbr!4v1754688731219!5m2!1spt-BR!2sbr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-primary-green text-white text-center py-8">
+        <div class="container mx-auto px-6">
+            <a href="index.html">
+                <img src="/imgs/logo.svg" alt="Logo Branca da Clínica Gaia no rodapé" class="h-20 w-auto mx-auto mb-4" onerror="this.onerror=null;this.src='https://placehold.co/150x80/125d40/FFFFFF?text=Clínica+Gaia';">
+            </a>
+            <div class="flex justify-center space-x-6 mb-4">
+                <a href="https://www.instagram.com/ilzepetris.naturologa/" target="_blank" class="text-white hover:text-accent-orange transition-colors"><svg class="w-8 h-8" role="img" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><title>Instagram</title><path d="M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.936 3.35.63 4.14C.333 4.905.131 5.775.072 7.053.012 8.333 0 8.74 0 12s.015 3.667.072 4.947c.06 1.277.261 2.148.558 2.913.306.788.717 1.459 1.384 2.126.667.666 1.336 1.079 2.126 1.384.766.296 1.636.499 2.913.558C8.333 23.988 8.74 24 12 24s3.667-.015 4.947-.072c1.277-.06 2.148-.262 2.913-.558.788-.306 1.459-.718 2.126-1.384.666-.667 1.079-1.335 1.384-2.126.296-.765.499-1.636.558-2.913.06-1.28.072-1.687.072-4.947s-.015-3.667-.072-4.947c-.06-1.277-.262-2.149-.558-2.913-.306-.789-.718-1.459-1.384-2.126C21.314 1.67 20.644 1.258 19.86.953c-.765-.297-1.636-.5-2.913-.558C15.667.012 15.26 0 12 0zm0 2.16c3.203 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.015 3.585-.074 4.85c-.06 1.17-.249 1.805-.413 2.227-.217.562-.477.96-.896 1.381-.42.419-.82.679-1.38.896-.423.164-1.057.36-2.227.413-1.266.057-1.646.07-4.85.07s-3.585-.015-4.85-.074c-1.17-.06-1.805-.249-2.227-.413-.562-.217-.96-.477-1.381-.896-.419-.42-.679-.82-1.381-.896-.164-.423-.36-1.057-.413-2.227-.057-1.266-.07-1.646-.07-4.85s.015-3.585.07-4.85c.06-1.17.249-1.805.413-2.227.217-.562.477.96.896-1.381.42-.419.82-.679 1.381-.896.422-.164 1.057-.36 2.227-.413C8.415 2.175 8.797 2.16 12 2.16zm0 3.18c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.162 6.162 6.162 6.162-2.759 6.162-6.162S15.403 5.34 12 5.34zm0 10.162c-2.209 0-4-1.79-4-4s1.791-4 4-4 4 1.79 4 4-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
+                <a href="https://api.whatsapp.com/send/?phone=554899071442&text=Ol%C3%A1%21+Tenho+interesse+em+agendar+uma+consulta+&type=phone_number&app_absent=0" target="_blank" class="text-white hover:text-accent-orange transition-colors"><svg class="w-8 h-8" role="img" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><title>WhatsApp</title><path d="M12.04 2.01A10.03 10.03 0 0 0 2.01 12.04a10.03 10.03 0 0 0 10.03 10.03 10.03 10.03 0 0 0 10.03-10.03c0-5.52-4.49-10.03-10.03-10.03zm0 18.23a8.2 8.2 0 0 1-8.2-8.2 8.2 8.2 0 0 1 8.2-8.2 8.2 8.2 0 0 1 8.2 8.2c0 4.52-3.68 8.2-8.2 8.2zm4.52-6.2c-.25-.12-1.47-.72-1.7-.81-.23-.08-.39-.12-.56.12-.17.25-.64.81-.79.97-.15.17-.29.19-.54.06-.25-.12-1.06-.39-2-1.23-.74-.66-1.23-1.47-1.38-1.72s-.02-.38.11-.51c.11-.11.25-.29.38-.43s.17-.21.25-.35.04-.27-.02-.39c-.06-.12-.56-1.34-.76-1.84s-.4-.42-.55-.42h-.5a.94.94 0 0 0-.67.31c-.23.23-.87.86-.87 2.09s.9 2.42 1.03 2.59c.13.17 1.75 2.67 4.24 3.74.59.25 1.05.4 1.41.51.61.2 1.17.16 1.62.1.48-.06 1.47-.6 1.68-1.18.21-.58.21-1.08.15-1.18-.07-.1-.23-.16-.48-.28z"/></svg></a>
+            </div>
+            <p class="text-sm text-white/80">&copy; 2025 Gaia. Todos os direitos reservados. <br> Made with 💙 by <a href="https://www.southsea.com.br/" target="_blank" class="font-semibold hover:text-accent-orange transition-colors">South Sea</a></p>
+        </div>
+    </footer>
+
+    <script>
+        function therapiesPage() {
+            return {
+                activeTab: 'acupuntura',
+                therapiesData: {
+                    acupuntura: { 
+                        title: 'Acupuntura', 
+                        image: '/imgs/terapias/acupuntura.png',
+                        content: `<h4>Visão da Medicina Tradicional Chinesa (MTC)</h4><p>A doença e a dor resultam de um desequilíbrio ou bloqueio no fluxo do Qi. A acupuntura busca restabelecer esse equilíbrio através da estimulação de pontos específicos.</p><h4>Visão Ocidental</h4><p>A inserção das agulhas estimula o sistema nervoso, liberando substâncias como endorfinas, serotonina e dopamina, que aliviam a dor e melhoram o humor. Também melhora a circulação local e relaxa os músculos.</p><h4>Principais Indicações</h4><ul><li>Alívio de dores crônicas e agudas</li><li>Redução de ansiedade, estresse e insônia</li><li>Melhora de problemas gastrointestinais e respiratórios</li><li>Saúde da mulher (TPM, menopausa, cólicas)</li><li>Aceleração na recuperação de lesões</li></ul><p class="text-xs mt-4"><strong>Importante:</strong> Informe sempre sobre condições preexistentes, medicamentos em uso e gravidez.</p>` 
+                    },
+                    aromaterapia: {
+                        title: 'Aromaterapia',
+                        image: '/imgs/terapias/aromaterapia.png',
+                        content: `<h4>Como Funciona?</h4><p>Os óleos essenciais atuam principalmente por inalação e aplicação tópica. Ao serem inalados, estimulam o sistema límbico (responsável por emoções e memória), desencadeando respostas fisiológicas e emocionais. Na pele, são absorvidos e podem ter ação anti-inflamatória, analgésica e relaxante.</p><h4>Principais Benefícios</h4><ul><li>Redução do estresse e ansiedade</li><li>Influência positiva no humor e bem-estar</li><li>Alívio de dores musculares e inflamações</li><li>Melhora na qualidade do sono e memória</li></ul><p class="text-xs mt-4"><strong>Importante:</strong> O uso deve ser orientado por um profissional qualificado, especialmente para gestantes, crianças e idosos.</p>`
+                    },
+                    auriculoterapia: {
+                        title: 'Auriculoterapia',
+                        image: '/imgs/terapias/auriculoterapia.png',
+                        content: `<h4>Como Funciona?</h4><p>A orelha possui uma alta concentração de terminações nervosas. Ao estimular pontos específicos (com sementes, esferas ou agulhas), enviamos sinais neurais ao cérebro, que desencadeiam respostas terapêuticas em órgãos e sistemas correspondentes, promovendo o equilíbrio energético.</p><h4>Principais Indicações</h4><ul><li>Tratamento de dores agudas e crônicas</li><li>Controle da ansiedade, estresse e compulsões</li><li>Auxílio em problemas de insônia</li><li>Complemento em tratamentos para perda de peso</li></ul>`
+                    },
+                    cromoterapia: {
+                        title: 'Cromoterapia',
+                        image: '/imgs/terapias/cromoterapia.png',
+                        content: `<h4>Como Funciona?</h4><p>Cada cor possui uma frequência vibracional única. Cores quentes (vermelho, laranja) podem estimular e energizar, enquanto cores frias (azul, verde) promovem relaxamento e tranquilidade. A aplicação dessas cores corrige desequilíbrios energéticos no corpo.</p><h4>Principais Indicações</h4><ul><li>Tratamento de insônia e estresse</li><li>Alívio de dores articulares</li><li>Auxílio em casos de ansiedade e depressão</li><li>Equilíbrio geral do corpo e da mente</li></ul><p class="text-xs mt-4">É uma Prática Integrativa e Complementar (PIC) reconhecida pela OMS e presente no SUS.</p>`
+                    },
+                    geoterapia: {
+                        title: 'Geoterapia',
+                        image: '/imgs/terapias/geoterapia.png',
+                        content: `<h4>Propriedades da Argila</h4><p>Possui ação analgésica, anti-inflamatória, desintoxicante, cicatrizante, hidratante e revitalizante. Absorve impurezas e toxinas da pele, promovendo renovação celular e melhorando a circulação.</p><h4>Aplicações Comuns</h4><ul><li>Cataplasmas para dores e inflamações</li><li>Máscaras faciais para limpeza e rejuvenescimento</li><li>Banhos e massagens desintoxicantes</li></ul><p class="text-xs mt-4"><strong>Contraindicações:</strong> Evitar aplicação em feridas abertas, micoses e em pessoas com marcapasso (na região do tórax).</p>`
+                    },
+                    fitoterapia: {
+                        title: 'Fitoterapia',
+                        image: '/imgs/terapias/fitoterapia.png',
+                        content: `<h4>Como Funciona?</h4><p>As plantas contêm compostos químicos (princípios ativos) com propriedades terapêuticas, como ação anti-inflamatória, analgésica, antioxidante e antimicrobiana. São utilizadas em diversas formas, como chás, extratos, tinturas e cápsulas.</p><h4>Principais Indicações</h4><ul><li>Problemas digestivos</li><li>Ansiedade e insônia</li><li>Dores e inflamações</li><li>Reforço do sistema imunológico e saúde da pele</li></ul><p class="text-xs mt-4"><strong>Importante:</strong> A fitoterapia deve ser utilizada sob orientação de um profissional qualificado devido a possíveis interações medicamentosas e contraindicações.</p>`
+                    },
+                    floraisDeBach: {
+                        title: 'Florais de Bach',
+                        image: '/imgs/terapias/florais.png',
+                        content: `<h4>A Filosofia do Dr. Bach</h4><p>Para o Dr. Edward Bach, os desequilíbrios emocionais são a verdadeira causa das doenças. Os florais atuam de forma sutil, no campo vibracional, para harmonizar esses estados emocionais, permitindo que o processo de cura do corpo seja mais tranquilo.</p><h4>Principais Benefícios</h4><ul><li>Equilíbrio emocional e bem-estar geral</li><li>Auxílio na prevenção de doenças psicossomáticas</li><li>Pode ser usado por qualquer pessoa, sem contraindicações</li><li>Complementa outros tratamentos, sejam eles médicos ou psicológicos</li></ul>`
+                    },
+                    guaSha: {
+                        title: 'Gua Sha',
+                        image: '/imgs/terapias/guasha.png',
+                        content: `<h4>Como Funciona?</h4><p>A técnica aumenta a microcirculação na área tratada, o que ajuda a liberar toxinas, reduzir inflamações e relaxar a fáscia muscular. No rosto, ajuda a reduzir o inchaço e suavizar linhas de expressão. No corpo, alivia dores e tensões.</p><h4>Principais Benefícios</h4><ul><li>Alívio de dores musculares agudas ou crônicas</li><li>Redução de inchaço e promoção da drenagem linfática</li><li>Estímulo à produção de colágeno</li><li>Relaxamento profundo da musculatura</li></ul>`
+                    },
+                    massoterapia: {
+                        title: 'Massoterapia Clínica',
+                        image: '/imgs/terapias/massoterapia.png',
+                        content: `<h4>Diferencial da Massagem Clínica</h4><p>Diferente de uma massagem apenas relaxante, a massoterapia clínica foca no tratamento. O profissional avalia a causa da dor e elabora um protocolo personalizado com diversas técnicas manuais para restaurar o equilíbrio corporal.</p><h4>Principais Benefícios</h4><ul><li>Alívio de dores musculares, contraturas e tensões</li><li>Melhora da circulação sanguínea e recuperação de tecidos</li><li>Correção de problemas posturais</li><li>Redução do estresse e melhora da flexibilidade</li></ul>`
+                    },
+                    reflexoterapia: {
+                        title: 'Reflexoterapia',
+                        image: '/imgs/terapias/reflexoterapia.png',
+                        content: `<h4>Como Funciona?</h4><p>Nossos pés possuem milhares de terminações nervosas. Ao estimular esses pontos reflexos, o cérebro e o sistema nervoso respondem positivamente, ajudando o organismo a eliminar toxinas, melhorar a circulação, aliviar dores e promover um relaxamento profundo.</p><h4>Principais Benefícios</h4><ul><li>Redução do estresse e ansiedade</li><li>Alívio de dores musculares e articulares</li><li>Melhora na qualidade do sono</li><li>Estímulo ao sistema imunológico</li></ul><p class="text-xs mt-4"><strong>Contraindicações:</strong> Evitar em casos de gravidez (primeiros 3 meses), febre, inflamações ou infecções nos pés.</p>`
+                    },
+                    reiki: {
+                        title: 'Reiki',
+                        image: '/imgs/terapias/reiki.png',
+                        content: `<h4>Como Funciona?</h4><p>O terapeuta, com ou sem toque, posiciona as mãos sobre o corpo do paciente, direcionando a energia para os centros energéticos (chakras) e locais afetados. Isso ajuda a dissolver bloqueios, repondo e equilibrando o fluxo energético.</p><h4>Principais Benefícios</h4><ul><li>Promove um profundo estado de relaxamento</li><li>Alivia estresse, ansiedade e insônia</li><li>Fortalece o sistema imunológico</li><li>Auxilia na redução de dores crônicas e dores de cabeça</li><li>Promove clareza mental e autoconhecimento</li></ul>`
+                    },
+                    shiroabhyanga: {
+                        title: 'Shiroabhyanga',
+                        image: '/imgs/terapias/shiroabhyanga.png',
+                        content: `<h4>Como Funciona?</h4><p>A estimulação dos "marmas" (pontos de energia) da cabeça age diretamente no sistema nervoso central, promovendo um fluxo de "prana" (energia vital) por todo o corpo. É especialmente indicada para tratamentos mentais e emocionais.</p><h4>Principais Benefícios</h4><ul><li>Alívio de estresse, ansiedade e insônia</li><li>Melhora da memória, concentração e percepção</li><li>Relaxa os músculos do pescoço e ombros, aliviando dores</li><li>Nutre os folículos capilares, promovendo a saúde dos cabelos</li></ul>`
+                    },
+                    ventosaterapia: {
+                        title: 'Ventosaterapia',
+                        image: '/imgs/terapias/ventosaterapia.png',
+                        content: `<h4>Como Funciona?</h4><p>A sucção criada pelas ventosas melhora o fluxo sanguíneo na região, o que ajuda na oxigenação dos tecidos, na eliminação de toxinas e no relaxamento da fáscia muscular. Pode ser aplicada de forma fixa ou deslizante.</p><h4>Principais Indicações</h4><ul><li>Alívio de dores musculares, lombares e articulares</li><li>Redução de tensões e contraturas</li><li>Melhora do sistema circulatório</li><li>Auxílio na redução de celulite e gordura localizada</li></ul><p class="text-xs mt-4">Deve ser realizada por um profissional qualificado para garantir a segurança e eficácia do tratamento.</p>`
+                    }
+                }
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const fadeInElements = document.querySelectorAll('.fade-in');
+            if ("IntersectionObserver" in window) {
+                const observer = new IntersectionObserver((entries, observer) => {
+                    entries.forEach(entry => { 
+                        if (entry.isIntersecting) { 
+                            entry.target.classList.add('visible'); 
+                            observer.unobserve(entry.target);
+                        } 
+                    });
+                }, { threshold: 0.1 });
+
+                fadeInElements.forEach(el => { 
+                    observer.observe(el); 
+                });
+            } else {
+                fadeInElements.forEach(el => el.classList.add('visible'));
+            }
+        });
+    </script>
+</body>
+</html>
