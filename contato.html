@@ -70,29 +70,32 @@
                 </a>
             </div>
 
-            <!-- Desktop Navigation -->
-            <nav class="hidden md:flex md:items-center md:space-x-8">
-                <a href="index.html" class="text-gray-700 hover:text-accent-orange transition-colors">Home</a>
-                <a href="sobre.html" class="text-gray-700 hover:text-accent-orange transition-colors">Sobre</a>
-                <a href="terapias.html" class="text-gray-700 hover:text-accent-orange transition-colors">Terapias</a>
-                <a href="index.html#depoimentos" class="text-gray-700 hover:text-accent-orange transition-colors">Depoimentos</a>
-                <a href="contato.html" class="text-accent-orange font-semibold">Contato</a>
-            </nav>
+            <!-- Right Side Items -->
+            <div class="flex items-center">
+                <!-- Desktop Navigation -->
+                <nav class="hidden md:flex md:items-center md:space-x-8">
+                    <a href="index.html" class="text-gray-700 hover:text-accent-orange transition-colors">Home</a>
+                    <a href="sobre.html" class="text-gray-700 hover:text-accent-orange transition-colors">Sobre</a>
+                    <a href="terapias.html" class="text-gray-700 hover:text-accent-orange transition-colors">Terapias</a>
+                    <a href="index.html#depoimentos" class="text-gray-700 hover:text-accent-orange transition-colors">Depoimentos</a>
+                    <a href="contato.html" class="text-accent-orange font-semibold">Contato</a>
+                </nav>
 
-            <!-- Action Button -->
-            <div class="hidden md:block">
-                <a href="https://api.whatsapp.com/send/?phone=554899071442&text=Ol%C3%A1%21+Tenho+interesse+em+agendar+uma+consulta+&type=phone_number&app_absent=0" target="_blank" class="rounded-lg bg-accent-orange px-5 py-2.5 text-sm font-medium text-white shadow-md hover:bg-accent-orange-dark focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2 transition-all">
-                    Agendar Consulta
-                </a>
-            </div>
+                <!-- Action Button -->
+                <div class="hidden md:block ml-8">
+                    <a href="https://api.whatsapp.com/send/?phone=554899071442&text=Ol%C3%A1%21+Tenho+interesse+em+agendar+uma+consulta+&type=phone_number&app_absent=0" target="_blank" class="rounded-lg bg-accent-orange px-5 py-2.5 text-sm font-medium text-white shadow-md hover:bg-accent-orange-dark focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2 transition-all">
+                        Agendar Consulta
+                    </a>
+                </div>
 
-            <!-- Mobile Menu Button -->
-            <div class="md:hidden">
-                <button @click="mobileMenuOpen = !mobileMenuOpen" class="inline-flex items-center justify-center rounded-md p-2 text-primary-green hover:bg-gray-700/10 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
-                    <span class="sr-only">Abrir menu principal</span>
-                    <svg x-show="!mobileMenuOpen" class="block h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" /></svg>
-                    <svg x-show="mobileMenuOpen" x-cloak class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>
-                </button>
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden">
+                    <button @click="mobileMenuOpen = !mobileMenuOpen" class="inline-flex items-center justify-center rounded-md p-2 text-primary-green hover:bg-gray-700/10 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
+                        <span class="sr-only">Abrir menu principal</span>
+                        <svg x-show="!mobileMenuOpen" class="block h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" /></svg>
+                        <svg x-show="mobileMenuOpen" x-cloak class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>
+                    </button>
+                </div>
             </div>
         </div>
 
